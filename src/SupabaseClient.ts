@@ -17,6 +17,10 @@ import { fetchWithAuth } from './lib/fetch'
 import { stripTrailingSlash, applySettingDefaults } from './lib/helpers'
 import { SupabaseAuthClient } from './lib/SupabaseAuthClient'
 import { Fetch, GenericSchema, SupabaseClientOptions, SupabaseAuthClientOptions } from './lib/types'
+// #ifdef MP
+// @ts-expect-error types
+import URL from 'core-js-pure/actual/url'
+// #endif
 
 const DEFAULT_GLOBAL_OPTIONS = {
   headers: DEFAULT_HEADERS,
